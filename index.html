@@ -12,9 +12,99 @@
         </script>
     </head>
     <body>
+        <form style="display: inline;">
+            <input type="text" name="number1"size="5">
+            <select name="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text"name="number2"size='5'>
+            <input type="button"value="="onclick="vishnu('ok')">
+        </form>
+        <span id="result"></span>
         
         <script>
             // js code inside body tag
+            //1 function definition
+            //globle variable
+            let n1 = document.querySelector("input[name='number1']");//object.method() es6 2015
+            let n2 = document.querySelector("input[name='number2']");
+
+            var rslt = document.getElementById('result');
+            let op = document.querySelector('select[name="operator"]');
+            //n1 = parseFloat(n1.value);
+           // n2 = parseFloat(n2.value);
+
+            function vishnu(x,y,z){//this is a formal argument
+                // function body 
+                //console.log(typeof n1.value);
+                //console.log(typeof n2.value);
+
+                //string --> number
+                var x  = parseFloat(n1.value);
+                var y =  parseFloat(n2.value);
+
+                
+                //console.log(typeof x + y);
+                //console.log(result);
+                /*
+                switch(expression) {
+                    case x:
+                        //code block
+                        break;
+                    case y:
+                        //code block
+                        break;
+                    default:
+                        // code block
+
+                }
+                */
+                console.log(op.value);
+                switch(op.value){
+                    case '+':
+                        console.log(x + y);
+                        rslt.innerHTML = x + y;
+                        break;
+
+                    case "-":
+                        console.log(x - y);
+                        rslt.innerHTML = x - y;
+                        break;
+                    case `*`:
+                        console.log(x * y);
+                        rslt.innerHTML = x * y;
+                        break;
+                    case '/':
+                        console.log(x / y);
+                        rslt.innerHTML = x / y;
+                        break;
+                    case '%':
+                        console.log(x % y);
+                        rslt.innerHTML = x % y;
+                        break;
+                    default:
+                        //console.log(op.value)
+                        console.log("Invaid Operation")
+                }
+                //console.log(op.value);
+                //rslt.innerHTML = x + y ;
+               //n1 = parseFloat(n1.value);
+               // n2 = parseFloat(n2.value);
+               // console.log(typeof n1); // '5'
+               // console.log(typeof n2); // '10'
+
+                // console.log(n1 + n2);
+
+                // every function return something/result
+            }
+
+
+
+
 
         </script>
     </body>
